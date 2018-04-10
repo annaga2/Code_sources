@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDemons_plain.a  CMakeFiles/Demons_plain.dir/Demons_plain.cc.o
+/usr/bin/ranlib libDemons_plain.a

@@ -1,0 +1,1 @@
+/usr/bin/c++    -fopenmp   CMakeFiles/uTIlzReg_Tools.dir/applications/uTIlzReg_Tools.cc.o  -o uTIlzReg_Tools -rdynamic lib/src/libDemons.a lib/src/libDemons_plain.a lib/src/libLDDMM.a lib/src/libLDDMM_plain.a lib/src/libGeoShoot.a lib/src/libLIDM.a lib/src/libSciCalcPack.a 

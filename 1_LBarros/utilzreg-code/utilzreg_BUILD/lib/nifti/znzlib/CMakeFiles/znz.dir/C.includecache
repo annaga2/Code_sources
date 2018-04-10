@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/Admin/Desktop/stage/Code_sources/1_LBarros/utilzreg-code/lib/nifti/znzlib/config.h
+
+/mnt/c/Users/Admin/Desktop/stage/Code_sources/1_LBarros/utilzreg-code/lib/nifti/znzlib/znzlib.c
+znzlib.h
+/mnt/c/Users/Admin/Desktop/stage/Code_sources/1_LBarros/utilzreg-code/lib/nifti/znzlib/znzlib.h
+
+/mnt/c/Users/Admin/Desktop/stage/Code_sources/1_LBarros/utilzreg-code/lib/nifti/znzlib/znzlib.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdarg.h
+-
+config.h
+/mnt/c/Users/Admin/Desktop/stage/Code_sources/1_LBarros/utilzreg-code/lib/nifti/znzlib/config.h
+

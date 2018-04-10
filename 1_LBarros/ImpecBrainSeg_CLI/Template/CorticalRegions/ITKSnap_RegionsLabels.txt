@@ -1,0 +1,29 @@
+######################################################
+# ITK-SnAP Label Description File For Cortical Regions
+# File format: 
+# IDX   -R-  -G-  -B-  -A--  VIS MSH  LABEL
+# Fields: 
+#    IDX:   Zero-based index 
+#    -R-:   Red color component (0..255)
+#    -G-:   Green color component (0..255)
+#    -B-:   Blue color component (0..255)
+#    -A-:   Label transparency (0.00 .. 1.00)
+#    VIS:   Label visibility (0 or 1)
+#    IDX:   Label mesh visibility (0 or 1)
+#  LABEL:   Label description 
+######################################################
+    0     0    0    0        0  0  0    "Clear Label"
+    1    36   16  102        1  1  1    "Frontal (prefrontal) R"
+    2   255  255    0        1  1  1    "Frontal (motor) R"
+    3   171  129   45        1  1  1    "Temporal R"
+    4   224   22  154        1  1  1    "Parietal R"
+    5     0   55  255        1  1  1    "Occipital R"
+    6     0  170    0        1  1  1    "Limbic R"
+    7   255    0    0        1  1  1    "Insular R"
+    8    10  207  194        1  1  1    "Frontal (prefrontal) L"
+    9   217   67   72        1  1  1    "Frontal (motor) L"
+   10   170    0  255        1  1  1    "Temporal L"
+   11   152  109   41        1  1  1    "Parietal L"
+   12   170    0    0        1  1  1    "Occipital L"
+   13     0  170    0        1  1  1    "Limbic L"
+   14   252  102  229        1  1  1    "Insular L"

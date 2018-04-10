@@ -1,0 +1,48 @@
+<ImageAnalysisParams title='Parameters For Image Analysis'>
+    <ImageInfo title='Image to analyse'>
+        <ImageFile ImageFile='../MISC/ExampleData/Example1.nii.gz' />
+        <T2insteadofT1 Bool='0' />
+    </ImageInfo>
+    <Landmarks title='Image landmarks'>
+        <LDMK1 title='Landmark 1 in voxel coordinates: pituitary gland'>
+            <LDMK1_x value='48' />
+            <LDMK1_y value='67' />
+            <LDMK1_z value='25' />
+        </LDMK1>
+        <LDMK2 title='Landmark 2 in voxel coordinates: anterior commissure'>
+            <LDMK2_x value='48' />
+            <LDMK2_y value='69' />
+            <LDMK2_z value='39' />
+        </LDMK2>
+        <LDMK3 title='Landmark 3 in voxel coordinates: posterior corpus callosum'>
+            <LDMK3_x value='48' />
+            <LDMK3_y value='45' />
+            <LDMK3_z value='45' />
+        </LDMK3>
+        <LDMK4 title='Landmark 4 in voxel coordinates: anterior caudate nucleus head (left)'>
+            <LDMK4_x value='40' />
+            <LDMK4_y value='81' />
+            <LDMK4_z value='47' />
+        </LDMK4>
+        <LDMK5 title='Landmark 5 in voxel coordinates: anterior caudate nucleus head (right)'>
+            <LDMK5_x value='55' />
+            <LDMK5_y value='81' />
+            <LDMK5_z value='47' />
+        </LDMK5>
+        <LDMK6 title='Landmark 6 in voxel coordinates: orbital canal extremity (left)'>
+            <LDMK6_x value='44' />
+            <LDMK6_y value='77' />
+            <LDMK6_z value='30' />
+        </LDMK6>
+        <LDMK7 title='Landmark 7 in voxel coordinates: orbital canal extremity (right)'>
+            <LDMK7_x value='52' />
+            <LDMK7_y value='77' />
+            <LDMK7_z value='30' />
+        </LDMK7>
+    </Landmarks>
+    <GeneralParameters title='General parameters'>
+        <PrefixOutputs str='./out_' />
+        <SkipCorticalRegionsResampling Bool='0' />
+        <SaveIntermediateRes Bool='0' />
+    </GeneralParameters>
+</ImageAnalysisParams>

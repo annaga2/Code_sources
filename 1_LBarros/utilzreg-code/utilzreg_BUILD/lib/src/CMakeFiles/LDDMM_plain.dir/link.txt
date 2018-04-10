@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLDDMM_plain.a  CMakeFiles/LDDMM_plain.dir/LDDMM_plain.cc.o
+/usr/bin/ranlib libLDDMM_plain.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLIDM.a  CMakeFiles/LIDM.dir/LIDM.cc.o
+/usr/bin/ranlib libLIDM.a

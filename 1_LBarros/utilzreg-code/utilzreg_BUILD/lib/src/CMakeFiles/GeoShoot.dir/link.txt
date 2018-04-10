@@ -1,0 +1,2 @@
+/usr/bin/ar qc libGeoShoot.a  CMakeFiles/GeoShoot.dir/GeoShoot.cc.o
+/usr/bin/ranlib libGeoShoot.a

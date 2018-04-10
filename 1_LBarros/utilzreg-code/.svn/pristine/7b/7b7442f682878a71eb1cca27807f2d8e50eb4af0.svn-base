@@ -1,0 +1,56 @@
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#1) COMPILING uTIlzReg  (LINUX & MAC / equivalent procedure with WINDOWS)
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#To Compile, you can use the following command lines from here:
+
+mkdir utilzreg_BUILD
+cd utilzreg_BUILD
+cmake -g ..
+make
+cd ..
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#2) USING DIFFERENT TOOLS OF uTIlzReg
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#To test the code, you can then use the following command lines from here. Note that the results presenting shape evolutions are 
+#saved in 3D+t images. Such deformations can be seen using, e.g., rview from irtk (http://www.doc.ic.ac.uk/~dr/software/). We also 
+#recommend to use itksnap (http://www.itksnap.org) to visualize 3D images (but not 3D+t as far as we know).
+
+#2.1) Variables definition and directory to store the results.
+
+ureg_LDM="./utilzreg_BUILD/uTIlzReg_LDDMM"
+ureg_GS="./utilzreg_BUILD/uTIlzReg_GeoShoot"
+ureg_LD="./utilzreg_BUILD/uTIlzReg_Demons"
+mkdir utilzreg_RESULTS
+
+#2.2) Perform LDDMM registration with large deformations using the sum of different kernels [Risser et al, TMI 2011]. Results are saved in "./utilzreg_RESULTS/potatoReg_LDDMM*".
+$ureg_LDM ./DATA/Potato2D_Src.nii ./DATA/Potato2D_Trg.nii -PrefixOutputs ./utilzreg_RESULTS/potatoReg_LDDMM -iterations 200 -subdivisions 30 -M_Gauss_easier 2 15 -symmetric -FinalDefVec -FinalDefInvVec
+
+#2.3) Perform Geodesic Shooting registration on 3D images [Vialard et al, IJCV 2011]. Results are saved in "./utilzreg_RESULTS/BrainReg_GS*".
+$ureg_GS ./DATA/Brains3D_4mm_Src.nii ./DATA/Brains3D_4mm_Trg.nii -PrefixOutputs ./utilzreg_RESULTS/BrainReg_GS -iterations 20  -M_Gauss_easier 4 10 -OutFinalDef -OutDispField -OutDeformation
+
+#2.4) Perform LogDemons registration on 3D images (adapted from [Vercauteren et al., MICCAI 2008] with the kernels of [Risser et al, TMI 2011]). Results are saved in "./utilzreg_RESULTS/BrainReg_LD*".
+$ureg_LD ./DATA/Brains3D_4mm_Src.nii ./DATA/Brains3D_4mm_Trg.nii -PrefixOutputs ./utilzreg_RESULTS/BrainReg_LD -iterations 20   -MK_fluid 3 4 7 10
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#3) WEBSITE WITH ADDITIONAL INFORMATION
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#More info at: http://laurent.risser.free.fr/uTIlzReg/menu_uTIlzReg.html
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#4) PARALLELIZATION USING OPENMP
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#To make possible parallel computations using openmp:
+#-> In [utilzreg]/CMakeLists.txt:            uncomment the line "#set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -fopenmp")"  
+#-> In [utilzreg]/lib/src/CMakeLists.txt:    uncomment the line "#set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -fopenmp")"  
+#-> In [utilzreg]/lib/include/SciCalcPack.h: replace "//define COMPILE_WITH_OPENMP"  with  "#define COMPILE_WITH_OPENMP"
+#-> In [utilzreg]/lib/include/SciCalcPack.h: replace "//include <omp.h> "  with  "#include <omp.h> "
+#-> Then (re)construct the makefile or equivalent using cmake

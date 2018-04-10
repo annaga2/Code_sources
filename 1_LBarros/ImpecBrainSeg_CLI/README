@@ -1,0 +1,19 @@
+
+* Before using ImpecBrainSeg:
+ -> Make sure python 2.7 is installed with Numpy. 
+    Installed by default on Ubuntu. 
+    Anaconda distribution is highly recommended for MAC and Windows.
+ -> Install SimpleITK for python: 
+    Command line on ubuntu:      pip install SimpleITK
+    Command line for Anaconda:   conda install -c https://conda.anaconda.org/simpleitk SimpleITK
+    Detailed instructions: https://itk.org/Wiki/SimpleITK/GettingStarted#Python_binary_files.
+
+* Launching ImpecBrainSeg:
+ -> Go to directory ./Software/
+ -> Type: 'python ImpecBrainSeg_CLI.py'
+ -> Follow instructions
+
+* Itksnap is recommended to vizualize the results
+ 
+ 
+
